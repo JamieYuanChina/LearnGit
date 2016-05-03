@@ -42,3 +42,13 @@ $ git push origin --tags
 出现错误的主要原因是github中的README.md文件不在本地代码目录中
 可以通过如下命令进行代码合并【注：pull=fetch+merge]
 git pull --rebase origin master
+
+总结：
+一个简单的git仓库创建共分为六步
+1本地创建目录并git init初始化
+2git add添加文件到编辑区
+3git commit -m "test"提交
+4在github创建仓库，不要自动添加readme
+5远程添加仓库
+git remote add origin https://github.com/JamieYuanChina/LearnGit.git
+6推送并关联本地仓库git push -u origin master  
