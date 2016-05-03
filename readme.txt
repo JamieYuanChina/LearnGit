@@ -51,4 +51,11 @@ git pull --rebase origin master
 4在github创建仓库，不要自动添加readme
 5远程添加仓库
 git remote add origin https://github.com/JamieYuanChina/LearnGit.git
-6推送并关联本地仓库git push -u origin master  
+6推送并关联本地仓库git push -u origin master
+
+开发一个新项目最好先在gitHub创建项目，然后克隆到本地的方式。
+git clone git@github.com:JamieYuanChina/LearnGit.git
+
+GitHub给出的地址不止一个，还可以用https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+
+使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。  
