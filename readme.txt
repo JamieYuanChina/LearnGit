@@ -1,20 +1,87 @@
-﻿1、安装git for windows
-2、配置全区变量，name和email
-3、初始化仓库  git init
-4、建立.gitignore文件
-5、拷贝源代码到仓库根目录
-6、git add 所有需要添加到仓库的文件。
-7、git commit -m "提交一个原始文档"
-8、git status查看状态
-9、git log查看提交历史
-10、git reflog查看命令历史
-11、git reset --hard commit_id  回退到某一版本
-12、git diff可以查看修改内容
-13、git branch 查看分支
-14、git checkout master 切换分支
-15、git tag v1.0   创建标签
-16、git tag查看标签
-17、git tag -d v0.1  删除标签
+# 简单操作说明： #
+
+### 1.建立项目 ###
+
+首先从服务器端建立项目，可以建立README文件并指定忽略策略  
+
+### 2.获取项目 ###
+
+从服务器克隆代码,需要在服务器上添加公钥  
+本地生成key：  
+$ ssh-keygen -t rsa -C "youremail@example.com"  
+在用户主目录下，有.ssh目录，目录下有id_rsa和id_rsa.pub这两个文件  
+这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人  
+公钥添加到服务器即可  
+克隆项目:  
+git clone git@gitee.com:jamieyy/LearnGit.git  
+如果没有公钥，可以使用HTTPS方式  
+git clone https://gitee.com/jamieyy/LearnGit.git  
+这样会要求输出服务器的用户名和密码  
+HTTPS方式虽然慢一点儿，但是比较灵活  
+
+### 3.设置项目 ###
+
+设置全局作者和Email。同时设置项目的作者和Email。 
+// 设置全局 
+git config --global user.name "Author Name" 
+git config --global user.email "Author Email" 
+// 或者设置本地项目库配置 
+git config user.name "Author Name" 
+git config user.email "Author Email" 
+//修改忽略文件 
+
+### 4.添加文件到项目中 ###
+
+拷贝项目文件或者在项目目录中新建。 
+
+### 5.本地操作 ###
+
+修改代码后查看状态：  
+git status  
+把修改后的代码添加到库  
+git add .  
+提交代码  
+git commit -m "提交说明"   
+
+### 6.同步代码到远程服务器 ###
+
+git push origin master 
+
+----------
+
+# 另一种方法 #
+
+- 1.本地创建目录并git init初始化  
+- 2.git add . 添加所有文件到编辑区  
+- 3.git commit -m "test"提交  
+- 4.在github创建仓库，不要自动添加readme  
+- 5.远程添加仓库 git remote add origin https://gitee.com/jamieyy/LearnGit.git  
+- 6.推送并关联本地仓库git push -u origin master  
+
+----------
+
+# 一些有用的提示 #
+
+1、安装git for windows  
+2、配置全区变量，name和email  
+3、初始化仓库  git init  
+4、建立.gitignore文件  
+5、拷贝源代码到仓库根目录  
+6、git add 所有需要添加到仓库的文件。  
+7、git commit -m "提交一个原始文档"  
+8、git status查看状态  
+9、git log查看提交历史  
+10、git reflog查看命令历史  
+11、git reset --hard commit_id  回退到某一版本  
+12、git diff可以查看修改内容  
+13、git branch 查看分支  
+14、git checkout master 切换分支  
+15、git tag v1.0   创建标签   
+16、git tag查看标签  
+17、git tag -d v0.1  删除标签  
+18、git push origin v1.0 推送标签  
+19、git push origin --tags 推送全部本地标签  
+20、git commit --amend 修改提交的注释
 
 
 远程仓库
